@@ -1,0 +1,17 @@
+hello:
+  url: http://localhost:8090
+
+spring:
+  cloud:
+    config:
+      enabled: false
+server:
+  port: 8081
+
+
+feign:
+  client:
+    config:
+      hello:
+        requestInterceptors:
+          -  com.greg.microsrevice.caller.RequestLoggerInterceptor
