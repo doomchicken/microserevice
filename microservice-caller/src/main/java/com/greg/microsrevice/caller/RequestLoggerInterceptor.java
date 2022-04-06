@@ -14,7 +14,7 @@ public class RequestLoggerInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
         count++;
-        log.info("Calling microsrevice - call number " + count);
+        log.info("Calling microservice - call number " + count);
         if (requestTemplate.body() !=null) {
             log.info(new String(requestTemplate.body(), StandardCharsets.UTF_8));
         }

@@ -1,5 +1,11 @@
-hello:
+textdoubler:
   url: http://localhost:8090
+
+springdoc:
+  packagesToScan : com.greg
+  pathsToMatch : /**
+  swagger-ui:
+    path: /swagger-ui.html
 
 spring:
   cloud:
@@ -12,6 +18,6 @@ server:
 feign:
   client:
     config:
-      hello:
+      textdoubler:
         requestInterceptors:
           -  com.greg.microsrevice.caller.RequestLoggerInterceptor

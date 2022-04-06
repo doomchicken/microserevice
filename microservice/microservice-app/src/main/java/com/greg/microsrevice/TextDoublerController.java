@@ -1,8 +1,8 @@
 package com.greg.microsrevice;
 
-import com.greg.microsservice.shared.HelloClient;
-import com.greg.microsservice.shared.HelloModel;
-import com.greg.microsservice.shared.HelloRequest;
+import com.greg.microsservice.shared.TextDoublerClient;
+import com.greg.microsservice.shared.TextDoubleResult;
+import com.greg.microsservice.shared.TextDoubleRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,11 +15,11 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/home")
 @Slf4j
-public class HomeController implements HelloClient {
-    @PostMapping
-    public HelloModel hello(@Valid @RequestBody HelloRequest helloRequest) {
-        log.info("Message recieved "+ helloRequest.text());
-        return new HelloModel(helloRequest.text());
+public class TextDoublerController implements TextDoublerClient {
+    @PostMapping("text-doubler")
+    public TextDoubleResult hello(@Valid @RequestBody TextDoubleRequest textDoubleRequest) {
+        log.info("Message recieved "+ textDoubleRequest.text());
+        return new TextDoubleResult(textDoubleRequest.text() + textDoubleRequest.text());
     }
 
     @GetMapping("test-error")

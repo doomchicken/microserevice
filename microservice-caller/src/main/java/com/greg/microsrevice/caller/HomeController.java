@@ -1,8 +1,8 @@
 package com.greg.microsrevice.caller;
 
-import com.greg.microsservice.shared.HelloClient;
-import com.greg.microsservice.shared.HelloModel;
-import com.greg.microsservice.shared.HelloRequest;
+import com.greg.microsservice.shared.TextDoublerClient;
+import com.greg.microsservice.shared.TextDoubleResult;
+import com.greg.microsservice.shared.TextDoubleRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/home")
 public class HomeController {
     @Autowired
-    HelloClient helloClient;
+    TextDoublerClient textDoublerClient;
 
-    @GetMapping
-    HelloModel test(){
-        return helloClient.hello(new HelloRequest("hello from Feign"));
+    @GetMapping("text-doubler")
+    TextDoubleResult test(){
+        return textDoublerClient.hello(new TextDoubleRequest("hello from Feign"));
     }
 
     @GetMapping("error")
     void testError(){
-         helloClient.testError();
+         textDoublerClient.testError();
     }
 }
