@@ -16,7 +16,7 @@ import javax.validation.Valid;
 @RequestMapping("/home")
 @Slf4j
 public class TextDoublerController implements TextDoublerClient {
-    @PostMapping("text-doubler")
+    @PostMapping("text-double")
     public TextDoubleResult hello(@Valid @RequestBody TextDoubleRequest textDoubleRequest) {
         log.info("Message recieved "+ textDoubleRequest.text());
         return new TextDoubleResult(textDoubleRequest.text() + textDoubleRequest.text());

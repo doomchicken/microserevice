@@ -14,12 +14,12 @@ public class HomeController {
     @Autowired
     TextDoublerClient textDoublerClient;
 
-    @GetMapping("text-doubler")
+    @GetMapping("text-double")
     TextDoubleResult test(){
         return textDoublerClient.hello(new TextDoubleRequest("hello from Feign"));
     }
 
-    @GetMapping("error")
+    @GetMapping("test-error")
     void testError(){
          textDoublerClient.testError();
     }

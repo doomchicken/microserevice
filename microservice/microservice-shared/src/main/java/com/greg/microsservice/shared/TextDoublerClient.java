@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @FeignClient(value = "textdoubler" , url = "${textdoubler.url}" , path = "home")
 public interface TextDoublerClient {
-    @PostMapping("text-doubler")
+    @PostMapping("text-double")
     TextDoubleResult hello(TextDoubleRequest request);
 
     @GetMapping("test-error")
