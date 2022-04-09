@@ -1,4 +1,4 @@
-package com.greg.microsrevice;
+package com.greg.microservice;
 
 import com.greg.microsservice.shared.ApiError;
 import lombok.extern.slf4j.Slf4j;
@@ -16,11 +16,12 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 @Slf4j
-public class RestExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({RuntimeException.class})
     protected ResponseEntity<Object> handleRunTImeException(
             RuntimeException ex) {
+        log.error(ex.getMessage());
         var apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, LocalDateTime.now(), ex.getMessage());
         return buildResponseEntity(apiError);
     }

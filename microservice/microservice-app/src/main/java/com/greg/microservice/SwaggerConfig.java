@@ -1,4 +1,4 @@
-package com.greg.microsrevice;
+package com.greg.microservice;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

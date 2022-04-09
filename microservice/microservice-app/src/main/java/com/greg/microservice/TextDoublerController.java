@@ -1,4 +1,4 @@
-package com.greg.microsrevice;
+package com.greg.microservice;
 
 import com.greg.microsservice.shared.TextDoublerClient;
 import com.greg.microsservice.shared.TextDoubleResult;

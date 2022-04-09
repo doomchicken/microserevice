@@ -1,4 +1,4 @@
-package com.greg.microsrevice;
+package com.greg.microservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

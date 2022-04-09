@@ -1,4 +1,4 @@
-package com.greg.microsrevice;
+package com.greg.microservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

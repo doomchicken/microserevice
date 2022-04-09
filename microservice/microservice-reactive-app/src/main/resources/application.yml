@@ -1,0 +1,13 @@
+springdoc:
+  packagesToScan : com.greg
+  pathsToMatch : /**
+  swagger-ui:
+    path: /swagger-ui.html
+
+spring:
+  cloud:
+    config:
+      enabled: false
+
+server:
+  port: 8091

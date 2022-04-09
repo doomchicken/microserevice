@@ -16,5 +16,6 @@
  <modules>
      <module>microservice-shared</module>
      <module>microservice-app</module>
+     <module>microservice-reactive-app</module>
  </modules>
 </project>
