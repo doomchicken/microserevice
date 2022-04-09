@@ -1,0 +1,24 @@
+textdoubler:
+  url: http://localhost:8091
+
+springdoc:
+  packagesToScan : com.greg
+  pathsToMatch : /**
+  swagger-ui:
+    path: /swagger-ui.html
+
+spring:
+  cloud:
+    config:
+      enabled: false
+server:
+  port: 8081
+
+
+reactive:
+  feign:
+    client:
+      config:
+        textdoubler-reactive:
+          requestInterceptors:
+            -  com.greg.microsrevice.reactive.RequestLoggerInterceptor

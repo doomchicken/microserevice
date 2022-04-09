@@ -11,8 +11,8 @@ public class SwaggerConfig
     @Bean
     public OpenAPI serviceApiConfig() {
         return new OpenAPI()
-                .info(new Info().title("Microservice API")
-                        .description("microservice")
+                .info(new Info().title("Microservice Reactive API")
+                        .description("microservice reactive")
                         .version("v0.0.1"));
     }
 }

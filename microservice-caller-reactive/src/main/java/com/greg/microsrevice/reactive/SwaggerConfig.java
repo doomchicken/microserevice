@@ -1,4 +1,4 @@
-package com.greg.microsrevice.caller;
+package com.greg.microsrevice.reactive;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -11,8 +11,8 @@ public class SwaggerConfig
     @Bean
     public OpenAPI serviceApiConfig() {
         return new OpenAPI()
-                .info(new Info().title("Microservice Caller API")
-                        .description("microservice caller")
+                .info(new Info().title("Microservice Caller Reactive API")
+                        .description("microservice")
                         .version("v0.0.1"));
     }
 }
