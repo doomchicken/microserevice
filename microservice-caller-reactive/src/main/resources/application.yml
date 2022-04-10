@@ -21,4 +21,4 @@ reactive:
       config:
         textdoubler-reactive:
           requestInterceptors:
-            -  com.greg.microsrevice.reactive.RequestLoggerInterceptor
+            -  com.greg.microsrevice.caller.reactive.RequestLoggerInterceptor

@@ -1,12 +1,10 @@
-package com.greg.microsrevice.reactive;
+package com.greg.microsrevice.caller.reactive;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import reactivefeign.spring.config.EnableReactiveFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = "com.greg")
 @EnableReactiveFeignClients(basePackages = "com.greg")
 public class MicroServiceCallerReactiveApplication {
 

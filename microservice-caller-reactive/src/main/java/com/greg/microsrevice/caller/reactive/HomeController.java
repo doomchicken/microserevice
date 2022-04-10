@@ -1,4 +1,4 @@
-package com.greg.microsrevice.reactive;
+package com.greg.microsrevice.caller.reactive;
 
 import com.greg.microsservice.shared.TextDoubleRequest;
 import com.greg.microsservice.shared.TextDoubleResult;
@@ -11,7 +11,6 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/home")
-
 public class HomeController {
     @Autowired
     TextDoublerReactiveClient textDoublerReactiveClient;

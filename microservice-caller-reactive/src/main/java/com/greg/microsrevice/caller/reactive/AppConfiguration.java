@@ -1,4 +1,4 @@
-package com.greg.microsrevice.reactive;
+package com.greg.microsrevice.caller.reactive;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
