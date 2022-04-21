@@ -1,6 +1,6 @@
 package com.greg.microservice;
 
-import com.greg.microsservice.shared.ApiError;
+import com.greg.microsservice.shared.model.ApiError;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

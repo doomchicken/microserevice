@@ -1,8 +1,8 @@
 package com.greg.microsrevice.caller.reactive;
 
-import com.greg.microsservice.shared.TextDoubleRequest;
-import com.greg.microsservice.shared.TextDoubleResult;
-import com.greg.microsservice.shared.TextDoublerReactiveClient;
+import com.greg.microsservice.shared.model.TextDoubleRequest;
+import com.greg.microsservice.shared.model.TextDoubleResult;
+import com.greg.microsservice.shared.client.TextDoublerReactiveClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

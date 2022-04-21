@@ -1,4 +1,4 @@
-package com.greg.microsservice.shared;
+package com.greg.microsservice.shared.model;
 
 import org.springframework.http.HttpStatus;
 

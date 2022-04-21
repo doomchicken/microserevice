@@ -5,10 +5,6 @@ import reactivefeign.client.ReactiveHttpRequest;
 import reactivefeign.client.ReactiveHttpRequestInterceptor;
 import reactor.core.publisher.Mono;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.List;
-
 @Slf4j
 public class RequestLoggerInterceptor implements ReactiveHttpRequestInterceptor {
 
