@@ -36,3 +36,4 @@ build/
 /jmeter.log
 /test_log.jtl
 /test-report/**
+/test-report/
