@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Custom ###
+jmeter.log
+test_log.jtl
+test-report/**
