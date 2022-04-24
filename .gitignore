@@ -33,7 +33,7 @@ build/
 .vscode/
 
 ### Custom ###
-/jmeter.log
-/test_log.jtl
-/test-report/**
-/test-report/
+/jmeter/jmeter.log
+/jmeter/test_log.jtl
+/jmeter/test-report/**
+/jmeter/test-report/
