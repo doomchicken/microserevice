@@ -15,7 +15,7 @@ import javax.validation.Valid
 class TextDoublerController : TextDoublerClient {
     private val log: Logger = LoggerFactory.getLogger(this::class.java)
     @PostMapping("text-double")
-    override fun hello(@RequestBody textDoubleRequest: @Valid TextDoubleRequest): TextDoubleResult {
+    override fun hello(@RequestBody @Valid textDoubleRequest:TextDoubleRequest): TextDoubleResult {
         log.info("Message recieved " + textDoubleRequest.text())
         return TextDoubleResult(textDoubleRequest.text() + textDoubleRequest.text())
     }
