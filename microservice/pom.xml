@@ -16,6 +16,7 @@
  <modules>
      <module>microservice-shared</module>
      <module>microservice-app</module>
-     <module>microservice-reactive-app</module>
+     <module>microservice-app-reactive</module>
+     <module>microservice-app-kotlin</module>
  </modules>
 </project>
