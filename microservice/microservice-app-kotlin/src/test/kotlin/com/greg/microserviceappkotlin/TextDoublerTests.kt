@@ -3,15 +3,17 @@ package com.greg.microserviceappkotlin
 import com.greg.microsservice.shared.model.TextDoubleRequest
 import com.greg.microsservice.shared.model.TextDoubleResult
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
+import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 
-class TextDoublerTests : ControllerTestBase() {
+class TextDoublerTests (@Autowired mockMvc: MockMvc): ControllerTestBase (mockMvc) {
     @Test
     @Throws(Exception::class)
     fun shouldDoubleText() {
-        mockMvc!!.perform(
+        mockMvc.perform(
             MockMvcRequestBuilders.post("/home/text-double")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(TextDoubleRequest("hello")))
@@ -27,7 +29,7 @@ class TextDoublerTests : ControllerTestBase() {
     @Test
     @Throws(Exception::class)
     fun shouldFailDoubleText_InvalidRequesst() {
-        mockMvc!!.perform(
+        mockMvc.perform(
             MockMvcRequestBuilders.post("/home/text-double")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(TextDoubleRequest(null)))
@@ -38,7 +40,7 @@ class TextDoublerTests : ControllerTestBase() {
     @Test
     @Throws(Exception::class)
     fun shouldErrorTestError() {
-        mockMvc!!.perform(
+        mockMvc.perform(
             MockMvcRequestBuilders.post("/home/test-error")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(TextDoubleRequest(null)))
@@ -49,7 +51,7 @@ class TextDoublerTests : ControllerTestBase() {
     @Test
     @Throws(Exception::class)
     fun shouldDelay() {
-        mockMvc!!.perform(
+        mockMvc.perform(
             MockMvcRequestBuilders.get("/home/delay")
                 .param("milliseconds", "200")
         )

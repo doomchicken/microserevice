@@ -21,9 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired
 
 @SpringBootTest
 @AutoConfigureMockMvc
-open class ControllerTestBase {
-    @Autowired
-    protected var mockMvc: MockMvc? = null
+open class ControllerTestBase (@Autowired  protected val mockMvc: MockMvc){
     protected fun asJsonString(obj: Any?): String {
         return try {
             ObjectMapper().writeValueAsString(obj)
