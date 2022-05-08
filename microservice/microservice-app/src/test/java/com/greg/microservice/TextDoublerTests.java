@@ -44,7 +44,7 @@ public class TextDoublerTests extends ControllerTestBase {
         mockMvc.perform(MockMvcRequestBuilders.post("/home/test-error")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(asJsonString(new TextDoubleRequest(null))))
-                .andExpect(status().is4xxClientError());
+                .andExpect(status().is5xxServerError());
     }
 
 

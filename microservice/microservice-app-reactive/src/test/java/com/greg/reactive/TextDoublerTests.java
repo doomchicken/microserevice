@@ -19,27 +19,30 @@ public class TextDoublerTests extends ControllerTestBase {
                 .json(asJsonString(new TextDoubleResult("hellohello")));
     }
 
-//    @Test
-//    public void shouldFailDoubleText_InvalidRequesst() throws Exception {
-//        mockMvc.perform(MockMvcRequestBuilders.post("/home/text-double")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(asJsonString(new TextDoubleRequest(null))))
-//                .andExpect(status().is4xxClientError());
-//    }
-//
-//    @Test
-//    public void shouldErrorTestError() throws Exception {
-//        mockMvc.perform(MockMvcRequestBuilders.post("/home/test-error")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(asJsonString(new TextDoubleRequest(null))))
-//                .andExpect(status().is4xxClientError());
-//    }
-//
-//
-//    @Test
-//    public void shouldDelay() throws Exception {
-//        mockMvc.perform(MockMvcRequestBuilders.get("/home/delay")
-//                        .param("milliseconds","200"))
-//                .andExpect(status().isOk());
-//    }
+    @Test
+    public void shouldFailDoubleText_InvalidRequesst() throws Exception {
+        webTestClient.post().uri("/home/text-double")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(Mono.just(new TextDoubleRequest(null)),TextDoubleRequest.class)
+                .exchange()
+                .expectStatus().is4xxClientError();
+    }
+
+    @Test
+    public void shouldErrorTestError() throws Exception {
+        webTestClient.get().uri("/home/test-error")
+                .exchange()
+                .expectStatus().is5xxServerError();
+    }
+
+
+    @Test
+    public void shouldDelay() throws Exception {
+        webTestClient.get().uri(uriBuilder -> uriBuilder
+                .path("/home/delay/")
+                .queryParam("milliseconds", "200")
+                .build())
+                .exchange()
+                .expectStatus().isOk();
+    }
 }

@@ -45,7 +45,7 @@ class TextDoublerTests (@Autowired mockMvc: MockMvc): ControllerTestBase (mockMv
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(TextDoubleRequest(null)))
         )
-            .andExpect(MockMvcResultMatchers.status().is4xxClientError)
+            .andExpect(MockMvcResultMatchers.status().is5xxServerError)
     }
 
     @Test
