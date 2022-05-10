@@ -23,12 +23,12 @@ public class CustomerTests extends ControllerTestBase{
 
     @Test
     public void shouldGetAllCustomers() throws Exception {
-        MvcResult getCustomersInitial = mockMvc.perform(MockMvcRequestBuilders.get("/customer")
+        var getCustomersInitial = mockMvc.perform(MockMvcRequestBuilders.get("/customer")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andReturn();
 
-        CustomerModel[] customersInitial = asJsonObject(getCustomersInitial.getResponse().getContentAsString(), CustomerModel[].class);
+        var customersInitial = asJsonObject(getCustomersInitial.getResponse().getContentAsString(), CustomerModel[].class);
         assertThat(customersInitial.length, is(0));
 
         mockMvc.perform(MockMvcRequestBuilders.post("/customer")
@@ -46,7 +46,7 @@ public class CustomerTests extends ControllerTestBase{
                 .andExpect(status().isOk())
                 .andReturn();
 
-        CustomerModel[] customersFinal = asJsonObject(getCustomersFinal.getResponse().getContentAsString(), CustomerModel[].class);
+        var customersFinal = asJsonObject(getCustomersFinal.getResponse().getContentAsString(), CustomerModel[].class);
         assertThat(customersFinal.length, is(2));
     }
 }

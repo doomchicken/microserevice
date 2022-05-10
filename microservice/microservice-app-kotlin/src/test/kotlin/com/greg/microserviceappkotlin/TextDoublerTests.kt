@@ -41,7 +41,7 @@ class TextDoublerTests (@Autowired mockMvc: MockMvc): ControllerTestBase (mockMv
     @Throws(Exception::class)
     fun shouldErrorTestError() {
         mockMvc.perform(
-            MockMvcRequestBuilders.post("/home/test-error")
+            MockMvcRequestBuilders.get("/home/test-error")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(TextDoubleRequest(null)))
         )

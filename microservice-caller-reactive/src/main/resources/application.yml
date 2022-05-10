@@ -22,3 +22,9 @@ reactive:
         textdoubler-reactive:
           requestInterceptors:
             -  com.greg.microsrevice.caller.reactive.RequestLoggerInterceptor
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, info , health
