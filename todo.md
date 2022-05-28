@@ -1,8 +1,10 @@
 Todo:
 
-micrometeer + prometheus
+micrometeer + prometheus + graphana
 
 dockerised
+
+kubernetes + gitops
 
 tests for callers
 

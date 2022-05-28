@@ -1,0 +1,26 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.1.0
+    ports:
+      - 9090:9090
+    restart: always
+  microservice-reactive:
+    image: docker.io/library/microservice-app-reactive:0.0.1-SNAPSHOT
+    ports:
+      - 8091:8091
+  microservice-kotlin:
+    image: docker.io/library/microservice-app-kotlin:0.0.1-SNAPSHOT
+    ports:
+      - 8092:8092
+  microservice:
+    image: docker.io/library/microservice-app:0.0.1-SNAPSHOT
+    ports:
+      - 8090:8090
+  microservice-caller:
+    image: docker.io/library/microservice-caller:0.0.1-SNAPSHOT
+    ports:
+      - 8080:8080
+  microservice-caller-reactive:
+    image: docker.io/library/microservice-caller-reactive:0.0.1-SNAPSHOT
+    ports:
+      - 8081:8081

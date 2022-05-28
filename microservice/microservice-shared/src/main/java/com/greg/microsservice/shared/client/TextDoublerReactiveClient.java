@@ -17,5 +17,5 @@ public interface TextDoublerReactiveClient {
     Mono<String> testError();
 
     @GetMapping("delay")
-    Mono delay(@RequestParam("milliseconds") int milliseconds);
+    Mono<Void> delay(@RequestParam("milliseconds") int milliseconds);
 }
